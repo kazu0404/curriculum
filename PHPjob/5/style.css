@@ -1,0 +1,112 @@
+#name{
+    margin-bottom: 5px;
+}
+
+#password{
+    margin-bottom: 10px;
+}
+
+#signUp{
+    color: white;
+    background-color: blue;
+}
+
+#signUp:hover{
+    transform: translate(1px,1px);
+}
+
+#login{
+    color: white;
+    background-color: blue;
+}
+
+#login:hover{
+    transform: translate(1px,1px);
+}
+
+#signUp-login{
+    color: white;
+    background-color:teal;
+    box-shadow: none;
+    margin-top: 25px;
+    margin-left: 20px;
+}
+
+#signUp-login:hover{
+    transform: translate(1px,1px);
+}
+
+#create-main{
+    color: white;
+    background-color:blue;
+    box-shadow: none;
+    margin-bottom: 10px;
+}
+
+#create-main:hover{
+    transform: translate(1px,1px);
+}
+
+#logout-main{
+    color: white;
+    background-color: gray;
+    box-shadow: none;
+    margin-left: 20px;
+    margin-bottom: 10px;
+}
+
+#logout-main:hover{
+    transform: translate(1px,1px);
+}
+
+#logout-in{
+    color: white;
+    background-color:blue;
+    box-shadow: none;
+    margin-top: 10px;
+}
+
+#logout-in:hover{
+    transform: translate(1px,1px);
+}
+
+#regi-book{
+    color: white;
+    background-color:blue;
+    box-shadow: none;
+    margin-top: 10px;
+}
+
+#regi-book:hover{
+    transform: translate(1px,1px);
+}
+
+#delete-main{
+    color: white;
+    background-color:blue;
+    box-shadow: none;
+    margin-top: 10px;
+}
+
+#delete-main:hover{
+    transform: translate(1px,1px);
+}
+
+.header{
+    display: flex;
+}
+
+table tr{
+    background-color: #EEEEEE;
+    border: 1px solid #bbb;
+    padding: .35em;
+}
+
+td a{
+    font-size: 15px;
+    color: white;
+}
+
+.delete{
+    background-color: red;
+}
