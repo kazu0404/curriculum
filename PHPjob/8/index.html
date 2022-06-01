@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table {
+            font-size: 1.5em;
+            text-align: center;
+        }
+
+        th, td {
+            padding : 10px;
+        }
+
+    </style>
+
+</head>
+
+<body>
+    <select id="onchange" select name="state" multiple> <!--onchange="changeLang()-->
+        <optgroup label="lang">
+            <option id="select">選択してください</option>
+            <option id="selected_jpn">日本語</option>
+            <option id="selected_en">English</option>
+            <option id="selected_all">全て表示</option>
+        </optgroup>
+    </select>
+
+    <table>
+        <div class = "jp" id="jp">
+            <tr>
+                <th class="hide_jp">日本</th>
+                <td class="hide_jp">こんにちは</td>
+                <td class="hide_jp">ありがとう</td>
+                <td class="hide_jp">さようなら</td>
+            </tr>
+        </div>
+
+        <div class = "en" id="en">
+            <tr>
+                <th class="hide_en">English</th>
+                <td class="hide_en">Hello</td>
+                <td class="hide_en">Thank you</td>
+                <td class="hide_en">Good Bye</td>
+            </tr>
+        </div>
+    </table>
+
+    <script>
+        //①onchangeで使用されている関数の中身を実装してください。
+        //window.addEventListener('DOMContentLoaded', function(){
+        let btn = document.getElementById('onchange');
+        btn.addEventListener('click', function() {
+
+            // select要素を取得
+            var select_state = document.querySelector("select[name=state]");
+
+            select_state.addEventListener('change',function(){
+
+                // 全てのoption要素を取得
+                var option_states = document.querySelectorAll("select[name=state] option");
+
+                for(var state of option_states) {
+
+                    if(state.selected) {
+                        var hide = document.getElementsByClassName("hide_jp");
+                            for(i=0;i<hide.length;i++){
+                                hide[i].style.visibility ="visible";
+                            }
+                        var hide = document.getElementsByClassName("hide_en");
+                            for(i=0;i<hide.length;i++){
+                                hide[i].style.visibility ="visible";
+                            }
+
+                        $s = state.textContent;
+                        //console.log($s);
+
+                        if($s =="選択してください"){
+                            var hide = document.getElementsByClassName("hide_jp");
+                            for(i=0;i<hide.length;i++){
+                                hide[i].style.visibility ="visible";
+                            }
+                            var hide = document.getElementsByClassName("hide_en");
+                            for(i=0;i<hide.length;i++){
+                                hide[i].style.visibility ="visible";
+                            }
+                        }else if($s =="日本語") {
+                            var hide = document.getElementsByClassName("hide_jp");
+                            for(i=0;i<hide.length;i++){
+                                hide[i].style.visibility ="collapse";
+                            }
+                            //document.getElementById("p2").style.visibility ="hidden";
+
+                            //console.log("jp");
+                        }else if($s =="English"){
+                            var hide = document.getElementsByClassName("hide_en");
+                            for(i=0;i<hide.length;i++){
+                                hide[i].style.visibility ="collapse";
+                            }
+                            //console.log("en");
+                        }else{
+                            var hide = document.getElementsByClassName("hide_jp");
+                            for(i=0;i<hide.length;i++){
+                                hide[i].style.visibility ="visible";
+                            }
+                            var hide = document.getElementsByClassName("hide_en");
+                            for(i=0;i<hide.length;i++){
+                                hide[i].style.visibility ="visible";
+                            }
+                        }
+
+                    /*if(state =='option#selected_jpn') {
+                        en.style.hidden;
+                    }else if(state =='selected_en'){
+                        jpn.style.hidden;
+                    }else{
+                                        ;
+                    }*/
+                    };
+                };
+
+            },false);
+        },false);       
+    </script>
+
+</body>
+
+</html>
