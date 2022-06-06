@@ -15,10 +15,12 @@ class CreateUsersTable extends Migration
     {
         Schema::create('users', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer("user_id");
+            //$table->integer("user_id");
             $table->string("name", 20);
             $table->string("email", 50);
-            $table->string("password", 20);   
+            $table->string("password", 255);   
+            $table->timestamp('created_at')->default(DB::raw('CURRENT_TIMESTAMP'));
+            $table->timestamp('updated_at')->default(DB::raw('CURRENT_TIMESTAMP'));   
         });
     }
 
@@ -32,3 +34,4 @@ class CreateUsersTable extends Migration
         Schema::dropIfExists('users');
     }
 }
+    

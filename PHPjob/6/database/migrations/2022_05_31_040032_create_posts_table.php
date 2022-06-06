@@ -15,10 +15,12 @@ class CreatePostsTable extends Migration
     {
         Schema::create('posts', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer("user_id")->nullable();
-            $table->string("body", 255)->nullable();    
-            $table->timestamp("deleted_at");
-            $table->timestamps();  
+            //$table->integer("user_id")->nullable();
+            $table->string('name', 20);    
+            $table->string('body', 255);    
+            $table->timestamp('deleted_at')->nullable();
+            $table->timestamp('created_at')->default(DB::raw('CURRENT_TIMESTAMP'));
+            $table->timestamp('updated_at')->default(DB::raw('CURRENT_TIMESTAMP'));   
         });
     }
 
