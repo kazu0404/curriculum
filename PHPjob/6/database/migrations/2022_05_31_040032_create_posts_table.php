@@ -15,10 +15,11 @@ class CreatePostsTable extends Migration
     {
         Schema::create('posts', function (Blueprint $table) {
             $table->increments('id');
-            //$table->integer("user_id")->nullable();
+            $table->integer("user_id");
             $table->string('name', 20);    
-            $table->string('body', 255);    
-            $table->timestamp('deleted_at')->nullable();
+            $table->string('body', 255);
+            $table->softDeletes();
+            //$table->timestamp('deleted_at')->nullable();
             $table->timestamp('created_at')->default(DB::raw('CURRENT_TIMESTAMP'));
             $table->timestamp('updated_at')->default(DB::raw('CURRENT_TIMESTAMP'));   
         });
@@ -33,4 +34,10 @@ class CreatePostsTable extends Migration
     {
         Schema::dropIfExists('posts');
     }
+    
+    public function softDeletes($column = 'deleted_at', $precision = 0)
+    {
+        return $this->timestamp($column, $precision)->nullable();
+    }
+    
 }

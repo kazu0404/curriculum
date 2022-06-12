@@ -18,7 +18,17 @@
                     
                     <div class="form-group row">
                         <div class="col-md-10">
-                            <input type="hidden" name="name" value={{ Auth::user()->name }}>
+                            
+                            <input type="hidden" name="user_id" value="{{ Auth::user()->user_id }}">
+                                    
+                        </div>
+                    </div>
+                    
+                    <div class="form-group row">
+                        <div class="col-md-10">
+                            
+                            <input type="hidden" name="name" value="{{ Auth::user()->name }}">
+                            
                         </div>
                     </div>
                     

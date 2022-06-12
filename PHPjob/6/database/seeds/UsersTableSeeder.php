@@ -13,7 +13,7 @@ class UsersTableSeeder extends Seeder
     {
         \DB::table('users')->insert([
             [
-                //'user_id' => '00800',
+                'user_id' => '00800',
                 'name' => 'hiroki',
                 'email' => 'hiroki@yahoo.co.jp',
                 'password' => Hash::make('hiroki11'),
@@ -22,7 +22,7 @@ class UsersTableSeeder extends Seeder
             ],
             
             [
-                //'user_id' => '00801',
+                'user_id' => '00801',
                 'name' => 'sayuri',
                 'email' => 'sayuri@yahoo.co.jp',
                 'password' => Hash::make('sayuri22'),
@@ -31,7 +31,7 @@ class UsersTableSeeder extends Seeder
             ],
             
             [
-                //'user_id' => '00802',
+                'user_id' => '00802',
                 'name' => 'dan',
                 'email' => 'dan@yahoo.co.jp',
                 'password' => Hash::make('dandan33'),
