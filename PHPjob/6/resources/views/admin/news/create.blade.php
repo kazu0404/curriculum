@@ -41,7 +41,7 @@
                     {{ csrf_field() }}
                     <input type="submit" class="btn btn-primary" value="つぶやく">
                 </form>
-            </div>
         </div>
     </div>
+</div>
 @endsection

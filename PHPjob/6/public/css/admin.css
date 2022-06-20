@@ -1,7 +1,7 @@
 body {
     background-repeat: no-repeat;
     background-position: center;
-    background-color: #000;
+    background-color: #white;
     color: #fff;
   }
   
@@ -50,44 +50,56 @@ body {
     display: flex;
     flex-direction: row;
     table-layout: fixed;
-    width: 500px; 　
-    margin-top: 20px;
-    margin-left: 180px;
-
+    width: 600px;
+    word-break:break-word;
+    margin-top: 50px;
   }
 
   .sns-td{
-    width: 400px;
+    word-break:break-word;
+    border: 1px black solid;
   }
 
   .sns-name{
-/*  color: red;*/
-/*  order: 1;*/
+    color: black;
+    width: 300px;
     font-weight: bold;
     font-size: 20px;
-    
+    word-break:break-word;
+    padding: 10px 0;
   }
 
   .sns-body{
-/*  color: blue;*/
-/*  order: 2;*/
-    width: 200px;
-/*  height: 400px;*/
-    word-wrap: break-word;
+    color: black;
+    width: 300px;
+    height: 150px;
     font-size: 15px;
     padding-top: 10px;
     padding-bottom: 20px;
-/*  flex-shrink:1;*/
+    word-break:break-word; 
+    line-height: 20px;
   }
 
   .sns-time{
-
-    
+    color: black;
+    width:300px;
+　  word-break:break-word;
+    padding-left: 80px;
+    padding-top: 10px;
+    padding-bottom: 10px;
   }
 
-  .sns-delete{
-    margin-top: 20px;
-  }
+.sns-deletetable{
+  color: black;
+  width: 300px;
+  word-break:break-word;
+  padding-left: 80px;
+}
+
+.sns-delete{
+  color: red;
+  margin-top: 20px;
+}
 
 
 
