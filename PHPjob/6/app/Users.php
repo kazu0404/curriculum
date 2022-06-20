@@ -1,6 +1,6 @@
 <?php
 
-namespace app\Users;
+namespace App;
 
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;

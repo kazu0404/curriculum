@@ -16,24 +16,29 @@ class UsersTableSeeder extends Seeder
                 'user_id' => '00800',
                 'name' => 'hiroki',
                 'email' => 'hiroki@yahoo.co.jp',
-                'password' => 'hiroki',
+                'password' => Hash::make('hiroki11'),
+                'created_at' => date('Y-m-d H:i:s'),
+                'updated_at' => date('Y-m-d H:i:s'),
             ],
             
             [
                 'user_id' => '00801',
                 'name' => 'sayuri',
                 'email' => 'sayuri@yahoo.co.jp',
-                'password' => 'sayuri',
-
+                'password' => Hash::make('sayuri22'),
+                'created_at' => date('Y-m-d H:i:s'),
+                'updated_at' => date('Y-m-d H:i:s'),
             ],
             
             [
                 'user_id' => '00802',
                 'name' => 'dan',
                 'email' => 'dan@yahoo.co.jp',
-                'password' => 'dan',
+                'password' => Hash::make('dandan33'),
+                'created_at' => date('Y-m-d H:i:s'),
+                'updated_at' => date('Y-m-d H:i:s'),
             ],
-            
+    
         ]);
         
         /*

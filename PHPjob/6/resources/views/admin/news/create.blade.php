@@ -1,5 +1,5 @@
 @extends('layouts.admin')
-@section('title', 'ニュースの新規作成')
+@section('title', '投稿の新規作成')
 
 @section('content')
     <div class="container">
@@ -15,6 +15,22 @@
                             @endforeach
                         </ul>
                     @endif
+                    
+                    <div class="form-group row">
+                        <div class="col-md-10">
+                            
+                            <input type="hidden" name="user_id" value="{{ Auth::user()->user_id }}">
+                                    
+                        </div>
+                    </div>
+                    
+                    <div class="form-group row">
+                        <div class="col-md-10">
+                            
+                            <input type="hidden" name="name" value="{{ Auth::user()->name }}">
+                            
+                        </div>
+                    </div>
                     
                     <div class="form-group row">
                         <div class="col-md-10">

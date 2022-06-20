@@ -33,7 +33,7 @@
             <nav class="navbar navbar-expand-md navbar-dark navbar-laravel">
                 <div class="container">
                     <a class="navbar-brand" href="<?php echo e(url('/')); ?>">
-                        <?php echo e(config('app.name', 'Mutter')); ?>
+                        <?php echo e(config('Mutter', 'Mutter')); ?>
 
                     </a>
                     
