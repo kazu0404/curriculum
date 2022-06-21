@@ -13,11 +13,8 @@
         th, td {
             padding : 10px;
         }
-
     </style>
-
 </head>
-
 <body>
     <select id="onchange" select name="state" multiple> <!--onchange="changeLang()-->
         <optgroup label="lang">
@@ -56,14 +53,12 @@
 
             // select要素を取得
             var select_state = document.querySelector("select[name=state]");
-
             select_state.addEventListener('change',function(){
 
                 // 全てのoption要素を取得
                 var option_states = document.querySelectorAll("select[name=state] option");
 
                 for(var state of option_states) {
-
                     if(state.selected) {
                         var hide = document.getElementsByClassName("hide_jp");
                             for(i=0;i<hide.length;i++){
@@ -87,20 +82,16 @@
                                 hide[i].style.visibility ="visible";
                             }
                         }else if($s =="日本語") {
-                            var hide = document.getElementsByClassName("hide_jp");
-                            for(i=0;i<hide.length;i++){
-                                hide[i].style.visibility ="collapse";
-                            }
-                            //document.getElementById("p2").style.visibility ="hidden";
-
-                            //console.log("jp");
-                        }else if($s =="English"){
                             var hide = document.getElementsByClassName("hide_en");
                             for(i=0;i<hide.length;i++){
-                                hide[i].style.visibility ="collapse";
+                                hide[i].style.visibility ="collapse"; //非表示
                             }
-                            //console.log("en");
-                        }else{
+                        }else if($s =="English"){
+                            var hide = document.getElementsByClassName("hide_jp");
+                            for(i=0;i<hide.length;i++){
+                                hide[i].style.visibility ="collapse"; //非表示
+                            }
+                        }else{ //全て表示
                             var hide = document.getElementsByClassName("hide_jp");
                             for(i=0;i<hide.length;i++){
                                 hide[i].style.visibility ="visible";
@@ -111,20 +102,11 @@
                             }
                         }
 
-                    /*if(state =='option#selected_jpn') {
-                        en.style.hidden;
-                    }else if(state =='selected_en'){
-                        jpn.style.hidden;
-                    }else{
-                                        ;
-                    }*/
                     };
                 };
 
             },false);
         },false);       
     </script>
-
 </body>
-
 </html>

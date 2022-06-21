@@ -1,16 +1,13 @@
 <?php
 require_once('dbconnect.php');
 // セッション開始
-//session_start();
-//include_once("dbInfo.php");
+session_start();
 
 // エラーメッセージ、登録完了メッセージの初期化
 $errorMessage1 = "";
 $errorMessage2 = "";
 $errorMessage3 = "";
 $signUpMessage = "";
-
-session_start();
 
 // ログインボタンが押された場合
 if (isset($_POST["signUp"])) {
@@ -29,6 +26,7 @@ if (isset($_POST["signUp"])) {
         // 入力したユーザIDとパスワードを格納
         $name = $_POST["name"];
         $password = $_POST["password"];
+        $password_hash = password_hash($password, PASSWORD_DEFAULT);
 
         // 2. ユーザIDとパスワードが入力されていたら認証する
         //$dsn = sprintf('mysql: user=%s; pass=%s; charset=utf8', $db['user'], $db['pass']);
@@ -38,16 +36,11 @@ if (isset($_POST["signUp"])) {
         $dbh = db_connect();
 
         try {
-            //$pdo = new PDO($dsn, $db['user'], $db['pass'], array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
-
             $sql = "INSERT INTO users (name, password) VALUES (:name, :password)";
             $stmt = $dbh->prepare($sql);
             $stmt->bindParam(':name', $name);
-            $stmt->bindParam(':password', $password);
-
-            //$stmt->execute(array($name, password_hash($password, PASSWORD_DEFAULT)));  // パスワードのハッシュ化を行う（今回は文字列のみなのでbindValue(変数の内容が変わらない)を使用せず、直接excuteに渡しても問題ない）
+            $stmt->bindParam(':password', $password_hash);
             $stmt->execute();  // 
-            //echo 'インサートしました。';
             $userid = $dbh->lastinsertid();  // 登録した(DB側でauto_incrementした)IDを$useridに入れる
             $signUpMessage = '登録が完了しました。あなたの登録IDは ' . $userid . ' です。パスワードは ' . $password . ' です。';  // ログイン時に使用するIDとパスワード
             echo $signUpMessage;

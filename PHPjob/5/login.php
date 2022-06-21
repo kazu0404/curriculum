@@ -1,7 +1,5 @@
 <?php
 require_once('dbconnect.php');
-// セッション開始
-session_start();
 
 // $_POSTが空ではない場合
 // つまり、ログインボタンが押された場合のみ、下記の処理を実行する
