@@ -6,8 +6,6 @@
  */
 
  function check_user_logged_in() {
-    // セッション開始
-    session_start();
     // セッションにuser_nameの値がなければlogin.phpにリダイレクト
     if (empty($_SESSION["name"])) {
         header("Location: login.php");
