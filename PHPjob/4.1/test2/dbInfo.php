@@ -1,9 +1,8 @@
 <?php
 require_once('dbconnect.php');
-// セッション開始
-session_start();
 
 // エラーメッセージ、登録完了メッセージの初期化
+$errorMessage  = "";    
 $errorMessage1 = "";
 $errorMessage2 = "";
 $errorMessage3 = "";
